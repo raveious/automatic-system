@@ -5,3 +5,6 @@ MTU - EE5900 Intro. to Robotics - Project 2
 - [ ] [Ian Wakely](https://github.com/raveious) (leader)
 - [ ] [Haden Wasserbaech](https://github.com/spartanhaden)
 - [ ] [Akhil Kurup](https://github.com/amkurup)
+
+## Link for jackal packages
+- https://github.com/jackal/jackal
