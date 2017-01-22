@@ -1,5 +1,7 @@
 <launch>
-  <node pkg="drunken_robot" name="teleop_rand" type="teleop_rand.py" output="screen"/>
+  <node pkg="drunken_robot" name="teleop_rand" type="teleop_rand.py" output="screen">
+    <rosparam command="load" file="$(find drunken_robot)/config/config.yaml" ns="drunken_robot"/>
+  </node>
   <node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py"  output="screen"/>
 
   <!-- Launch Gazebo with the specified world -->
