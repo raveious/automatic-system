@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Talker that reads current location temperature and  
+# Talker that reads current location temperature and
 # publishes std_msgs to the 'chatter' topic as Float32
 
 # Intro to Robotics - EE5900 - Spring 2017
@@ -31,7 +31,7 @@ def twistCallback(data):
 
 def setup():
      # create node for listening to twist messages
-    rospy.init_node("teleop_rand", anonymous=True)
+    rospy.init_node("teleop_rand")
 
     # subscribe to all
     rospy.Subscriber("cmd_vel", Twist, twistCallback)
@@ -51,7 +51,7 @@ def setup():
             # push Twist msgs
             motion.linear.x = map[0]
             motion.angular.z = map[1]
-            
+
             # publish Twist
             pub.publish(motion)
             pub = rospy.Publisher("/jackal_velocity_controller/cmd_vel", Twist, queue_size=10)
