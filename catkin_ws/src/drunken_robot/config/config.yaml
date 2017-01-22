@@ -1,0 +1,9 @@
+# Delay before robot becomes drunk
+delay: 2.0
+# Rate at which the node publishes
+user_rate: 2
+# min and max Twist values
+linear_min: -1
+linear_max: 2
+angular_min: -1
+angular_max: 2
