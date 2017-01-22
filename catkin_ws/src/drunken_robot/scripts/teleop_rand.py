@@ -29,18 +29,6 @@ def twistCallback(data):
     rospy.loginfo("Received twist message")
 
 
-def randMovement():
-    # generate random movement mapping
-    map = [random.randrange(-1,2), random.randrange(-1,2)]
-
-    # push Twist msgs
-    Twist.linear.x = map[0]
-    Twist.angular.z = map[1]
-    
-    # publish Twist
-    pub.publish(Twist)
-
-
 def setup():
      # create node for listening to twist messages
     rospy.init_node("teleop_rand", anonymous=True)
@@ -55,7 +43,18 @@ def setup():
         # check for keyboard teleop
         if last_twist_time_time + delay < rospy.get_time():
             rospy.loginfo("drunk mode")
-            randMovement()
+
+            # generate random movement mapping
+            map = [random.randrange(-1,2), random.randrange(-1,2)]
+
+            motion = Twist()
+            # push Twist msgs
+            motion.linear.x = map[0]
+            motion.angular.z = map[1]
+            
+            # publish Twist
+            pub.publish(motion)
+            pub = rospy.Publisher("/jackal_velocity_controller/cmd_vel", Twist, queue_size=10)
 
         else:
             rospy.loginfo("waiting for input to stop")
