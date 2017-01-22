@@ -1,6 +1,6 @@
 <launch>
-  <node pkg="drunken_robot" name="teleop_rand" type="teleop_rand.py"/>
-  <node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py"/>
+  <node pkg="drunken_robot" name="teleop_rand" type="teleop_rand.py" output="screen"/>
+  <node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py"  output="screen"/>
 
   <!-- Launch Gazebo with the specified world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
