@@ -18,4 +18,5 @@ $ source devel/setup.bash
 ```
 
 ## Link for jackal packages
+- https://github.com/ros-teleop/teleop_twist_keyboard
 - https://github.com/jackal/jackal
