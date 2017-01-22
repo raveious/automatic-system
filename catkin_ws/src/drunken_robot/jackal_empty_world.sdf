@@ -204,7 +204,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/akhil/jackal_navigation/src/jackal/jackal_description/meshes/jackal-base.stl</uri>
+              <uri>world_files/jackal-base.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -219,7 +219,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/akhil/jackal_navigation/src/jackal/jackal_description/meshes/jackal-fenders.stl</uri>
+              <uri>world_files/jackal-fenders.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -234,7 +234,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/akhil/jackal_navigation/src/LMS1xx/meshes/sick-lms1xx.dae</uri>
+              <uri>world_files/sick-lms1xx.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -243,7 +243,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/akhil/jackal_navigation/src/jackal/jackal_description/meshes/sick-lms1xx-bracket.stl</uri>
+              <uri>world_files/sick-lms1xx-bracket.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -368,7 +368,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/akhil/jackal_navigation/src/jackal/jackal_description/meshes/jackal-wheel.stl</uri>
+              <uri>world_files/jackal-wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -436,7 +436,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/akhil/jackal_navigation/src/jackal/jackal_description/meshes/jackal-wheel.stl</uri>
+              <uri>world_files/jackal-wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -504,7 +504,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/akhil/jackal_navigation/src/jackal/jackal_description/meshes/jackal-wheel.stl</uri>
+              <uri>world_files/jackal-wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -572,7 +572,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/akhil/jackal_navigation/src/jackal/jackal_description/meshes/jackal-wheel.stl</uri>
+              <uri>world_files/jackal-wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
