@@ -40,7 +40,7 @@ def setup():
     rate = rospy.Rate(user_rate)
 
     # publish to cmd_vel of the jackal
-    pub = rospy.Publisher("/jackal_velocity_controller/cmd_vel", Twist, queue_size=10)
+    pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)
 
     # loop
     while not rospy.is_shutdown():
@@ -57,7 +57,7 @@ def setup():
 
             # generate random movement mapping
             map = [random.randrange(linear_min,linear_max), random.randrange(angular_min,angular_max)]
-            
+
             # push Twist msgs
             motion = Twist()
             motion.linear.x = map[0]
@@ -66,7 +66,7 @@ def setup():
             # publish Twist
             pub.publish(motion)
             pub = rospy.Publisher("/jackal_velocity_controller/cmd_vel", Twist, queue_size=10)
-            
+
             # rospy.loginfo('user_rate=%d  linear_min=%d  linear_max=%d  angular_min=%d  angular_max=%d'%(user_rate, linear_min, linear_max, angular_min, angular_max))
             # rospy.loginfo("drunk mode x = {} z = {}".format(motion.linear.x, motion.angular.z))
             rospy.logdebug("drunk mode x = {} z = {}".format(motion.linear.x, motion.angular.z))
@@ -81,5 +81,4 @@ if __name__ == "__main__":
     try:
         setup()
     except rospy.ROSInterruptException:
-        print("exit pls")
         pass
