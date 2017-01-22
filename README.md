@@ -1,6 +1,6 @@
 # MTU - EE5900 - Intro. to Robotics - Project 2
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H7ok3Q6NmVc" frameborder="0" allowfullscreen></iframe>
+<a href="https://www.youtube.com/watch?v=H7ok3Q6NmVc" target="_blank"><img src= "http://img.youtube.com/vi/H7ok3Q6NmVc/0.jpg" alt="Drunken Robot Video" border="1" /></a>
 
 ## Tasks
  1. Build an empty gazebo world for your Jackal (remove the obstacles).
