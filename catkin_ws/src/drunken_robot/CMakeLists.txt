@@ -7,8 +7,8 @@ project(drunken_robot)
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   rospy
-  std_msg
-  teleop_twist_keyboard
+  std_msgs
+  # teleop_twist_keyboard
 )
 
 ## System dependencies are found with CMake's conventions
@@ -103,7 +103,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES drunken_robot
-#  CATKIN_DEPENDS geometry_msgs rospy std_msg teleop_twist_keyboard
+#  CATKIN_DEPENDS geometry_msgs rospy std_msgs teleop_twist_keyboard
 #  DEPENDS system_lib
 )
 
