@@ -94,10 +94,6 @@
       </model>
     </state>
     <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose>6.70261 2.41332 41.2791 0 1.4098 -3.1231</pose>
-        <view_controller>orbit</view_controller>
-      </camera>
     </gui>
   </world>
 </sdf>
