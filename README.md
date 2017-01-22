@@ -36,7 +36,7 @@ This project can be launched using `roslaunch` by calling
 $ roslaunch drunken_robot drunken_robot.launch
 ```
 
-Assuming that you checked out this project from github, then you're going to have to go through [development instructions](#Development).
+Assuming that you checked out this project from github, then you're going to have to go through [development instructions](#development).
 
 ### Paramaters
 name | default | description
