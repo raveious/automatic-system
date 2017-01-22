@@ -2,9 +2,9 @@
 MTU - EE5900 Intro. to Robotics - Project 2
 
 ## [Tutorial Completion](https://www.clearpathrobotics.com/assets/guides/jackal/simulation.html)
-- [ ] [Ian Wakely](https://github.com/raveious) (leader)
-- [ ] [Haden Wasserbaech](https://github.com/spartanhaden)
-- [ ] [Akhil Kurup](https://github.com/amkurup)
+- [x] [Ian Wakely](https://github.com/raveious) (leader)
+- [x] [Haden Wasserbaech](https://github.com/spartanhaden)
+- [x] [Akhil Kurup](https://github.com/amkurup)
 
 ## Development
 
