@@ -26,5 +26,5 @@ $ catkin_make
 $ source devel/setup.bash
 ```
 
-## Link for jackal packages
+## Dependant packages
 - https://github.com/ros-teleop/teleop_twist_keyboard
