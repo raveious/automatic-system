@@ -16,7 +16,7 @@ def setup():
     rospy.Subscriber("cmd_vel", Twist, twistCallback)
     rate = rospy.Rate(100)
 
-    pub = rospy.Publisher("/cmd_vel", Twist)
+    pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)
 
     # spin() keeps python from exiting until this node is stopped
     rospy.spin()
