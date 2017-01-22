@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-# Talker that reads current location temperature and
-# publishes std_msgs to the 'chatter' topic as Float32
+# publisher + subscriber that reads cmd_vel from Jackal and
+# either generates a random movement or halts for Jckal to complete
+# keyboard teleop movement
 
 # Intro to Robotics - EE5900 - Spring 2017
 #          Assignment #2
@@ -11,7 +12,7 @@
 #           Haden
 #           Akhil
 #
-# Revision: v1.1
+# Revision: v1.2
 
 # imports
 import rospy
@@ -20,65 +21,45 @@ import sys
 from geometry_msgs.msg import Twist
 
 last_twist_time_time = 0.0
-delay = 2.0
 
-# Read command line parameters and form key map
-# Usage: teleop_rand.py <rate> <linear_min> <linear_max> <angular_min> <angular_max>
-def readParameters():
-    global user_rate, linear_min, linear_max, angular_min, angular_max
-
-    # default assignments
-    user_rate = 2
-    linear_min = -1
-    linear_max = 2
-    angular_min = -1
-    angular_max = 2
-
-    # check args
-    if len(sys.argv)>1:
-        user_rate = int(sys.argv[1])
-
-    if len(sys.argv)>2:
-        linear_min = int(sys.argv[2])
-
-    if len(sys.argv)>3:
-        linear_max = int(sys.argv[3])
-
-    if len(sys.argv)>4:
-        angular_min = int(sys.argv[4])
-   
-    if len(sys.argv)>5:
-        angular_max = int(sys.argv[5])
-
-
-
+# define callback for twist
 def twistCallback(data):
     global last_twist_time_time
     last_twist_time_time = rospy.get_time()
 
-
+# define setup and run routine
 def setup():
-    readParameters()
+    # get initial parameters
+    user_rate  = rospy.get_param("/teleop_rand/drunken_robot/user_rate")
 
-     # create node for listening to twist messages
+    # create node for listening to twist messages
     rospy.init_node("teleop_rand")
 
     # subscribe to all
     rospy.Subscriber("cmd_vel", Twist, twistCallback)
     rate = rospy.Rate(user_rate)
 
+    # publish to cmd_vel of the jackal
     pub = rospy.Publisher("/jackal_velocity_controller/cmd_vel", Twist, queue_size=10)
 
+    # loop
     while not rospy.is_shutdown():
+        # get delay parameter
+        delay = rospy.get_param("/teleop_rand/drunken_robot/delay")
 
         # check for keyboard teleop
         if last_twist_time_time + delay < rospy.get_time():
+            # get parameters
+            linear_min  = rospy.get_param("/teleop_rand/drunken_robot/linear_min")
+            linear_max  = rospy.get_param("/teleop_rand/drunken_robot/linear_max")
+            angular_min = rospy.get_param("/teleop_rand/drunken_robot/angular_min")
+            angular_max = rospy.get_param("/teleop_rand/drunken_robot/angular_max")
+
             # generate random movement mapping
             map = [random.randrange(linear_min,linear_max), random.randrange(angular_min,angular_max)]
-            # map = [random.randrange(-1,2), random.randrange(-1,2)]
-
-            motion = Twist()
+            
             # push Twist msgs
+            motion = Twist()
             motion.linear.x = map[0]
             motion.angular.z = map[1]
 
@@ -95,7 +76,7 @@ def setup():
         rate.sleep()
 
 
-
+# standard ros boilerplate
 if __name__ == "__main__":
     try:
         setup()
