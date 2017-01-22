@@ -1,0 +1,5 @@
+<launch>
+	<node pkg="drunken_robot" name="telop_rand" type="telop_rand.py"/>
+	<node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py"/>
+  <!-- <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/> -->
+</launch>
